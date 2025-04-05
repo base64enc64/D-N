@@ -1,0 +1,285 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    overflow-x: hidden;
+    height: 100vh;
+    background-color: #f0f8ff;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#landing-page {
+    background: linear-gradient(135deg, #a8d8ff, #6ab7ff);
+}
+
+.bear-container {
+    cursor: pointer;
+    text-align: center;
+}
+
+.real-bear {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.real-bear:hover {
+    transform: scale(1.05);
+}
+
+.click-text {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#message-page {
+    background: linear-gradient(135deg, #e6f2ff, #cce6ff);
+}
+
+.message-bubble {
+    width: 90%;
+    max-width: 600px;
+    min-height: 70vh;
+    background-color: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    border: 3px solid #89c4f4;
+}
+
+.message-bubble::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #89c4f4;
+    bottom: -30px;
+    left: 50px;
+}
+
+.message-content {
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.message-content h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #6ab7ff;
+}
+
+.message-content p {
+    margin-bottom: 20px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.code-title {
+    font-family: 'Dancing Script', cursive !important;
+    color: #6ab7ff;
+    font-size: 24px;
+    text-align: center;
+    margin: 30px 0 15px 0;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.floating-hearts {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.floating-hearts span {
+    display: inline-block;
+    margin: 0 5px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-hearts span:nth-child(1) { animation-delay: 0s; }
+.floating-hearts span:nth-child(2) { animation-delay: 1s; }
+.floating-hearts span:nth-child(3) { animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.signature {
+    margin-top: 40px;
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.signature-name {
+    text-align: right;
+    font-size: 22px;
+    color: #6ab7ff;
+    font-weight: bold;
+}
+
+.bear-mini {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.bear-mini .bear-body {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin: 0 10px;
+    background-color: #89c4f4;
+    border-radius: 50%;
+    animation: jump 0.5s ease;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .message-bubble {
+        padding: 25px;
+    }
+
+    .message-content {
+        font-size: 16px;
+    }
+
+    .message-content h1 {
+        font-size: 28px;
+    }
+
+    .real-bear {
+        width: 150px;
+    }
+}
+.petal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('petal.png'); /* Susin çiçeği yaprağı resmi */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    animation: fall linear infinite;
+    will-change: transform;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--x-move), 110vh, 0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.floating-bears {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.floating-bears .mini-bear {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 0 10px;
+    animation: float 3s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+.floating-bears .mini-bear:nth-child(1) { animation-delay: 0s; }
+.floating-bears .mini-bear:nth-child(2) { animation-delay: 1s; }
+.floating-bears .mini-bear:nth-child(3) { animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.love-poem {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 20px 0;
+}
+
+.love-poem p {
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.love-poem p:last-child {
+    margin-bottom: 0;
+}
+

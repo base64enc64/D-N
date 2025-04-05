@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İmoş'tan Mesaj</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Giriş Sayfası -->
+    <div id="landing-page" class="page active">
+        <div class="bear-container" onclick="openBear()">
+            <img src="image.png" alt="Ayıcık" class="real-bear" />
+            <div class="click-text">
+                <h3>İmoş'tan bir mesaj var</h3>
+                <h5>Açmak için imoş'a dokun 🧸💙</h5>
+            </div>
+        </div>
+    </div>
+    <div class="petal-container"></div>
+
+    <!-- Mesaj Sayfası -->
+    <div id="message-page" class="page">
+        <div class="message-bubble">
+            <div class="message-content">
+                <h1>Canım Çiçeğim 💙</h1>
+                <p>Sen hayatıma girmeden önce "404 - Mutluluk Bulunamadı" hatası veriyordum. Ama sen geldin ve sistemim komple yeniden başladı! 💻❤️</p>
+                <p>Gülüşünle kalbimdeki tüm "bug"ları düzelttin, varlığınla en karanlık "syntax error"larımı aydınlattın. Artık "CTRL + ALT + DEL" yapmama gerek yok çünkü sen benim en güzel "background process"imsin!</p>
+                <p>Seninle sohbet etmek, sesini duymak, sana sarılmak... Bunlar benim "cache"imde hep açık kalan tab'larım. Her bakışını "bookmark"ladım, her gülüşünü "favorite" olarak işaretledim.</p>
+                <p>Yanındayken dünya 144Hz'de akıyor, hayat 4K kalitesinde. Ve her görüşümüzde kalbim hala ilk günkü gibi "overclock" oluyor! Çünkü sen - sadece sen - bu kadar güzel bir "user experience" yaşatabilirdin bana.</p>
+                <p>Seni seviyorum...<br>
+                Stack overflow yapacak kadar!  ❤️</p>
+                <p>NİHAT</p>
+                <div class="floating-bears">
+                    <img src="image.png" alt="Ayıcık" class="mini-bear"><img src="image.png" alt="Ayıcık" class="mini-bear"><img src="image.png" alt="Ayıcık" class="mini-bear">
+                </div>
+                <div class="signature">
+                    <div class="signature-name">— İmoş'un (Kalbi "cloud"a yüklemiş, seninle "local"de mutlu!) ☁️💻🐻</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Müzik ve Kontroller -->
+    <audio id="bg-music" src="music.m4a" loop></audio>
+    <button id="music-toggle">🔈</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
